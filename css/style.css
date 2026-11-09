@@ -524,3 +524,74 @@ textarea { min-height: 120px; resize: vertical; }
   .marquee-track { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- people, organisation */
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.person { position: relative; padding: 20px 20px 22px; background: var(--bg-2); border-top: 3px solid var(--accent); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%); }
+.person .mono { display: block; font-size: .62rem; }
+.person b { display: block; margin-top: 10px; font-family: var(--display); font-weight: 700; font-size: 1.45rem; line-height: 1; text-transform: uppercase; color: var(--ink); }
+.person small { display: block; margin-top: 8px; color: var(--navy-soft); font-size: .85rem; }
+.section-ink .person { background: rgba(255, 255, 255, .07); }
+.section-ink .person b { color: #fff; }
+.section-ink .person small { color: rgba(255, 255, 255, .6); }
+.org-level { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 4vw, 64px); padding: clamp(36px, 5vw, 56px) 0; border-top: 1px solid var(--line); }
+.org-level:last-child { border-bottom: 1px solid var(--line); }
+.org-level .k { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 6vw, 5rem); line-height: .9; color: var(--accent); margin-bottom: 14px; }
+.org-level h3 { font-size: 2rem; margin-top: 10px; line-height: 1; }
+.org-level p { margin-top: 14px; color: var(--navy-soft); }
+.org-level .textlink { margin-top: 18px; }
+.org-level .people { margin-top: 0; }
+@media (max-width: 900px) { .org-level { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .people { grid-template-columns: 1fr; } }
+
+/* ---------- medal tables */
+.medals { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.medals th { font-family: var(--mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 16px 12px 0; border-bottom: 2px solid var(--ink); font-weight: 500; }
+.medals td { padding: 16px 16px 16px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.medals td.ev { font-family: var(--display); font-weight: 700; font-size: 1.3rem; text-transform: uppercase; line-height: 1.05; color: var(--ink); }
+.medals td.ath { color: var(--navy-soft); line-height: 1.45; }
+.medal { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; color: var(--ink); padding-top: 4px; }
+.medal::before { content: ""; width: 12px; height: 12px; transform: skewX(-20deg); background: var(--ink); }
+.medal.gold::before { background: #d6a51c; }
+.medal.silver::before { background: #a3abba; }
+.medal.bronze::before { background: #b4703a; }
+.section-ink .medals th { border-color: rgba(255, 255, 255, .6); color: rgba(255, 255, 255, .6); }
+.section-ink .medals td { border-color: var(--line-light); }
+.section-ink .medals td.ev { color: #fff; }
+.section-ink .medals td.ath { color: rgba(255, 255, 255, .72); }
+.section-ink .medal { color: rgba(255, 255, 255, .85); }
+@media (max-width: 640px) {
+  .medals thead { display: none; }
+  .medals tr { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .medals td { padding: 0; border: 0; }
+  .section-ink .medals tr { border-color: var(--line-light); }
+}
+
+/* ---------- big number columns */
+.cols.big .k { font-size: clamp(2.6rem, 4vw, 3.6rem); }
+
+/* ---------- growth chart */
+.chart { margin-top: 32px; }
+.chart ol { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(10px, 2.5vw, 32px); align-items: end; height: 280px; list-style: none; border-bottom: 2px solid var(--ink); }
+.chart li { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.chart .v { font-family: var(--display); font-weight: 800; font-size: clamp(1.1rem, 2vw, 1.6rem); line-height: 1; margin-bottom: 8px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.chart .bar { display: block; height: calc(var(--v) / var(--max) * 100%); background: var(--navy); clip-path: polygon(0 6px, 100% 0, 100% 100%, 0 100%); transition: background .25s ease; }
+.chart li:last-child .bar { background: var(--accent); }
+.chart li:hover .bar { background: var(--accent-2); }
+.chart-x { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(10px, 2.5vw, 32px); padding-top: 12px; }
+.chart-x span { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.chart figcaption { margin-top: 20px; text-transform: none; letter-spacing: .04em; font-size: .72rem; }
+@media (max-width: 520px) { .chart ol { height: 200px; } }
+
+/* ---------- rules cards */
+.rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rule-card { padding: 26px 24px 28px; background: #fff; border-top: 3px solid var(--ink); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%); }
+.rule-card h3 { font-size: 1.9rem; margin-top: 12px; line-height: .95; }
+.rule-card > p { margin-top: 12px; color: var(--navy-soft); font-size: .95rem; }
+.rule-card .marks { margin-top: 18px; }
+.rule-card .marks li { padding: 12px 0; }
+.rule-card .marks b { font-size: .95rem; font-weight: 500; text-transform: none; letter-spacing: 0; }
+@media (max-width: 900px) { .rules { grid-template-columns: 1fr; } }
+
+.stats b.money { font-size: clamp(2.4rem, 4.2vw, 3.8rem); white-space: nowrap; }
+.stats b.money small { font-size: .5em; margin-left: 4px; color: var(--accent); }

@@ -113,14 +113,19 @@
   }
 
   // Contact form → opens the visitor's mail app (no server required)
-  const form = $('#contactForm');
-  if (form) {
+  $$('form[data-mailto]').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const v = id => (form.querySelector('#' + id) || {}).value || '';
-      const subject = encodeURIComponent('[Website] ' + v('topic'));
-      const body = encodeURIComponent(`Name: ${v('name')}\nEmail: ${v('email')}\nPhone: ${v('phone')}\n\n${v('message')}`);
+      const subjField = form.dataset.subjectField;
+      const subj = form.dataset.subject || (subjField && (form.querySelector('#' + subjField) || {}).value) || 'Website enquiry';
+      const lines = [];
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        const lab = form.querySelector('label[for="' + el.id + '"]');
+        if (lab && el.value) lines.push(lab.textContent.trim() + ': ' + el.value);
+      });
+      const subject = encodeURIComponent('[Website] ' + subj);
+      const body = encodeURIComponent(lines.join('\n'));
       location.href = `mailto:cycling.tamilnadustate@gmail.com?subject=${subject}&body=${body}`;
     });
-  }
+  });
 })();

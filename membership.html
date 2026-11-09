@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Membership — Tamil Nadu Cycling Association</title>
-<meta name="description" content="Rider licences, club affiliation and partnership with the Tamil Nadu Cycling Association.">
+<title>Membership & Registration — Tamil Nadu Cycling Association</title>
+<meta name="description" content="Rider registration for 2026, club affiliation and partnership with the Tamil Nadu Cycling Association.">
 <meta name="theme-color" content="#090f2b">
 <link rel="icon" type="image/png" href="images/logos/tnca-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
     </a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span>Menu</span><i></i></button>
     <nav class="nav" id="nav" aria-label="Main navigation">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="disciplines.html">Disciplines</a><a href="events.html">Events</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+      <a href="about.html">About</a><a href="disciplines.html">Disciplines</a><a href="events.html">Events</a><a href="results.html">Results</a><a href="development.html">Development</a><a href="news.html">News</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
       <a href="membership.html" class="btn">Join the race <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </nav>
   </div>
@@ -42,7 +42,7 @@
   <div class="container">
     <nav class="crumbs mono" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Membership</span></nav>
     <h1>Ride with Tamil Nadu.</h1>
-    <p class="lead">Join the association as a rider, affiliate your club or partner with us to support cycling in Tamil Nadu.</p>
+    <p class="lead">Register as a rider for the 2026 season, affiliate your club or partner with us to support cycling in Tamil Nadu.</p>
   </div>
   <span class="cap">Team Tamil Nadu</span>
 </section>
@@ -101,22 +101,67 @@
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section" id="register">
   <div class="container">
     
     <div class="section-head">
-      <div class="index"><b>02</b><span>How to apply</span></div>
-      <div class="title"><h2>Three simple steps</h2></div>
+      <div class="index"><b>02</b><span>Rider registration</span></div>
+      <div class="title"><h2>Who can <em>register?</em></h2><p class="lead">Register as an official TNCA cyclist for the 2026 season. Age is taken as on 31 December of the competition year.</p></div>
+    </div>
+    <div class="cols">
+      <div class="reveal"><span class="k">1</span><h3>Junior</h3><p>Ages 17 to 18. The entry point to state championships and national junior selection.</p></div>
+      <div class="reveal"><span class="k">2</span><h3>Under-23</h3><p>Ages 19 to 22. Elite racing with a dedicated development classification.</p></div>
+      <div class="reveal"><span class="k">3</span><h3>Elite</h3><p>Ages 23 and over. Open competition and selection for Team Tamil Nadu.</p></div>
+      <div class="reveal"><span class="k">4</span><h3>Masters</h3><p>Ages 30 and over. Age-group racing in road, track and MTB events.</p></div>
+    </div>
+    <div class="contact" style="margin-top:clamp(40px,5vw,64px)">
+      <div class="reveal">
+        <h2>Register for <em>2026.</em></h2>
+        <p class="lead" style="margin-top:18px">Riders need a current registration to enter championship and selection events. Registration is annual and includes race insurance at sanctioned events.</p>
+        <ul class="steps-list" style="margin-top:28px">
+          <li><span class="k">Step 01</span><div><h3>Submit the form</h3><p>Send your details using the form. The office will confirm receipt and request documents.</p></div></li>
+          <li><span class="k">Step 02</span><div><h3>Documents</h3><p>Age proof, identity proof and a passport photograph, plus a club or school letter where applicable.</p></div></li>
+          <li><span class="k">Step 03</span><div><h3>Licence issued</h3><p>Once approved, your registration is issued and you can enter events for the season.</p></div></li>
+        </ul>
+        <div class="note" style="margin-top:20px;border-top:0"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Questions about registration? Email <a href="mailto:cycling.tamilnadustate@gmail.com">cycling.tamilnadustate@gmail.com</a> or call <a href="tel:+917550148588">+91 75501 48588</a>.</span></div>
+      </div>
+      <div class="reveal">
+<form id="regForm" class="form" data-mailto data-subject="Rider registration 2026" novalidate>
+  <h3>Rider registration 2026</h3>
+  <p>Fill in your details and submit. Your email app opens with the registration ready to send to the association office.</p>
+  <div class="fields">
+    <div><label for="r-name">Full name</label><input id="r-name" name="name" required autocomplete="name" placeholder="As on your ID"></div>
+    <div><label for="r-dob">Date of birth</label><input id="r-dob" name="dob" type="date" required></div>
+    <div><label for="r-phone">Contact number</label><input id="r-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91"></div>
+    <div><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+    <div><label for="r-district">District</label><select id="r-district" name="district"><option>Chennai</option><option>Coimbatore</option><option>Madurai</option><option>Salem</option><option>Tiruchirappalli</option><option>Tirunelveli</option><option>Vellore</option><option>Erode</option><option>Thanjavur</option><option>Tiruppur</option><option>Other</option></select></div>
+    <div><label for="r-cat">Category</label><select id="r-cat" name="category"><option>Junior (17–18)</option><option>Under-23 (19–22)</option><option>Elite (23+)</option><option>Masters (30+)</option></select></div>
+    <div><label for="r-disc">Discipline</label><select id="r-disc" name="discipline"><option>Road</option><option>Track</option><option>Mountain Bike</option><option>Time Trial</option><option>Para Cycling</option></select></div>
+    <div><label for="r-club">Club (optional)</label><input id="r-club" name="club" placeholder="Your club or school"></div>
+    <div class="full"><label for="r-address">Address</label><textarea id="r-address" name="address" required placeholder="Street, town, district, PIN"></textarea></div>
+    <div class="full"><button class="btn" type="submit">Submit registration <svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+  </div>
+</form>
+</div>
+    </div>
+  </div>
+</section>
+<section class="section section-2">
+  <div class="container">
+    
+    <div class="section-head">
+      <div class="index"><b>03</b><span>Clubs and partners</span></div>
+      <div class="title"><h2>Affiliate or partner</h2></div>
     </div>
     <div class="split">
       <div class="split-media landscape reveal"><img src="images/para.jpg" alt="Para cyclists racing"><span class="cap">Para cycling</span></div>
       <div class="reveal">
         <ul class="steps-list">
-          <li><span class="k">Step 01</span><div><h3>Contact the office</h3><p>Send us an enquiry with your name, district and the membership you are interested in.</p></div></li>
-          <li><span class="k">Step 02</span><div><h3>Submit your documents</h3><p>We will send you the application form and the list of documents required, such as identity and age proof.</p></div></li>
-          <li><span class="k">Step 03</span><div><h3>Receive your membership</h3><p>Once approved, your licence or affiliation is issued and you can enter events for the season.</p></div></li>
+          <li><span class="k">Clubs</span><div><h3>Club affiliation</h3><p>District associations and clubs affiliate annually to run sanctioned races, register riders and vote at the general body.</p></div></li>
+          <li><span class="k">Partners</span><div><h3>Sponsorship</h3><p>Title and presenting sponsorship of championships, support for the elite programme and brand presence at events.</p></div></li>
+          <li><span class="k">Schools</span><div><h3>School programmes</h3><p>Talent identification days and introductory sessions for schools and colleges across Tamil Nadu.</p></div></li>
         </ul>
-        <a href="contact.html" class="btn" style="margin-top:32px">Start your application <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="contact.html" class="btn" style="margin-top:32px">Talk to the office <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </div>
@@ -137,7 +182,7 @@
     <div class="footer-top">
       <div class="footer-about">
         <a href="index.html" class="brand"><img src="images/logos/tnca-logo.png" alt=""><span class="wm">Tamil Nadu Cycling Association<small>Chennai · India</small></span></a>
-        <p>The governing body for road, track, mountain bike and para cycling in Tamil Nadu. We organise state championships, develop riders and coaches, and select Team Tamil Nadu for national competition.</p>
+        <p>The governing body for competitive cycling in Tamil Nadu since 1966. We organise state championships, develop riders, coaches and officials, and select Team Tamil Nadu for national competition.</p>
         <div class="footer-logos">
           <span><img src="images/logos/cfi-logo.png" alt="Cycling Federation of India"></span>
           <span><img src="images/logos/sdat-logo.png" alt="Sports Development Authority of Tamil Nadu"></span>
@@ -148,7 +193,8 @@
         <ul>
           <li><a href="events.html">Race calendar</a></li>
           <li><a href="disciplines.html">Disciplines</a></li>
-          <li><a href="about.html#pathway">Athlete pathway</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="track-asia-cup.html">Track Asia Cup 2026</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </ul>
       </div>
@@ -156,6 +202,8 @@
         <h4>Association</h4>
         <ul>
           <li><a href="about.html">About us</a></li>
+          <li><a href="development.html">Development</a></li>
+          <li><a href="documents.html">Documents &amp; rules</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -166,14 +214,15 @@
         <ul class="footer-contact">
           <li>No 95B, 4th Avenue, Shanthi Colony Main Road,<br>Anna Nagar, Chennai 600 040</li>
           <li><a href="mailto:cycling.tamilnadustate@gmail.com">cycling.tamilnadustate@gmail.com</a></li>
-          <li><a href="https://www.tncyclingassociation.com">www.tncyclingassociation.com</a></li>
+          <li><a href="tel:+917550148588">+91 75501 48588</a><br><a href="tel:+919976377722">+91 99763 77722</a></li>
+          <li><a href="https://www.instagram.com/tamilnaducyclingassociation" rel="noopener">Instagram · @tamilnaducyclingassociation</a></li>
         </ul>
       </div>
     </div>
     <div class="wordmark" aria-hidden="true">Tamil Nadu Cycling</div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> Tamil Nadu Cycling Association</span>
-      <span>Affiliated to CFI &nbsp;·&nbsp; Recognised by SDAT</span>
+      <span>Since 1966 &nbsp;·&nbsp; Affiliated to CFI &nbsp;·&nbsp; Recognised by SDAT</span>
     </div>
   </div>
 </footer>
